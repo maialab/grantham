@@ -1,0 +1,133 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# grantham
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of `{grantham}` is to provide a minimal set of routines to calculate
+the Grantham distance [1].
+
+The Grantham distance attempts to provide a proxy for the evolutionary distance
+between two amino acids based on three key chemical properties: composition,
+polarity and molecular volume. In turn, evolutionary distance is used as a proxy
+for the impact of missense mutations. The higher the distance, the more
+deleterious the substitution is expected to be.
+
+## Installation
+
+You can install the development version of `{grantham}` like so:
+
+``` r
+# install.packages("remotes")
+remotes::install_github("maialab/grantham")
+```
+
+## Usage
+
+Grantham distance between two amino acids:
+
+```{r}
+library(grantham)
+
+grantham_distance(x = 'Ser', y = 'Phe')
+```
+
+The function `grantham_distance()` is vectorised with amino acids being matched element-wise to form pairs for comparison:
+
+```{r}
+grantham_distance(x = c('Ser', 'Arg'), y = c('Phe', 'Leu'))
+```
+
+The two vectors of amino acids must have compatible sizes in the sense of
+[vec_recycle()](https://vctrs.r-lib.org/reference/vec_recycle.html) for element
+recycling to be possible, i.e., either the two vectors have the same length, or
+one of them is of length one, and it is recycled up to the length of the other.
+
+```{r}
+# `'Ser'` is recycled to match the length of the second vector, i.e. 3.
+grantham_distance(x = 'Ser', y = c('Phe', 'Leu', 'Arg'))
+```
+
+Use the function `amino_acid_pairs()` to generate all 20 x 20 amino acid pairs:
+
+```{r}
+aa_pairs <- amino_acid_pairs()
+aa_pairs
+```
+
+And now calculate all Grantham distances for all pairs `aa_pairs`:
+
+```{r}
+grantham_distance(x = aa_pairs$x, y = aa_pairs$y)
+```
+
+Because distances are symmetric, and pairs formed by the same amino acid are
+trivially zero, you might want to exclude these pairs:
+
+```{r}
+# `keep_self = FALSE`: excludes pairs such as ("Ser", "Ser")
+# `keep_reverses = FALSE`: excludes reversed pairs, e.g. ("Arg", "Ser") will be
+# removed because ("Ser", "Arg") already exists.
+aa_pairs <- amino_acid_pairs(keep_self = FALSE, keep_reverses = FALSE)
+
+# These amino acid pairs are the 190 pairs shown in Table 2 of Grantham's
+# original publication.
+aa_pairs
+
+# Grantham distance for the 190 unique amino acid pairs
+grantham_distance(x = aa_pairs$x, y = aa_pairs$y)
+```
+
+The Grantham distance $d_{i,j}$ for two amino acids $i$ and $j$ is:
+
+$$d_{i,j} = \rho (\alpha (c_i-c_j)^2+\beta (p_i-p_j)^2+ \gamma (v_i-v_j)^2)^{1/2}\ .$$
+
+The distance is based on three chemical properties of amino acid side chains:
+
+- composition ($c$)
+- polarity ($p$)
+- molecular volume ($v$)
+
+We provide a data set with these properties:
+
+```{r}
+amino_acids_properties
+```
+
+If you want to calculate the Grantham distance from these property values you
+may use the function `grantham_equation()`.
+
+
+## Related software
+
+Other sources we've found in the R ecosystem that also provide code for calculation of the Grantham distance:
+
+- A GitHub Gist by Daniel E Cook provides the function `calculate_grantham()`, see [Fetch_Grantham.R](https://gist.github.com/danielecook/501f03650bca6a3db31ff3af2d413d2a).
+- The `{midasHLA}` package includes the unexported function `distGrantham()` in [utils.R](https://github.com/Genentech/midasHLA/blob/ec29296f9bfd7c4fae9e2040592b618e5f2a99a1/R/utils.R).
+- The `{HLAdivR}` package exports a data set with the Grantham distances in the format of a matrix, see [data.R]( https://github.com/rbentham/HLAdivR/blob/master/R/data.R).
+
+## Code of Conduct
+  
+Please note that the `{grantham}` package is released with a [Contributor Code
+of Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html).
+By contributing to this project, you agree to abide by its terms.
+
+
+## References
+
+1. Grantham, R. _Amino acid difference formula to help explain protein evolution_. Science 185, 862--864
+(1974). doi: [10.1126/science.185.4154.862](https://doi.org/10.1126/science.185.4154.862).

@@ -1,0 +1,10 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^data-raw$
+^README\.Rmd$
+^CODE_OF_CONDUCT\.md$
+^LICENSE\.md$
+^docs$
+^pkgdown$
+^\.github$
+^CRAN-RELEASE$
