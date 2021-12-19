@@ -7,7 +7,7 @@
 <!-- badges: end -->
 
 The goal of `{grantham}` is to provide a minimal set of routines to
-calculate the Grantham distance<sup>[\[1\]](#1)</sup>.
+calculate the Grantham distance<sup>[1](#1)</sup>.
 
 The Grantham distance attempts to provide a proxy for the evolutionary
 distance between two amino acids based on three key side chani chemical
