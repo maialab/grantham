@@ -7,7 +7,7 @@
 <!-- badges: end -->
 
 The goal of `{grantham}` is to provide a minimal set of routines to
-calculate the Grantham distance \[1\].
+calculate the Grantham distance<sup>[\[1\]](#1)</sup>.
 
 The Grantham distance attempts to provide a proxy for the evolutionary
 distance between two amino acids based on three key side chani chemical
@@ -223,6 +223,6 @@ By contributing to this project, you agree to abide by its terms.
 
 ## References
 
-1.  Grantham, R. *Amino acid difference formula to help explain protein
-    evolution*. Science 185, 862–864 (1974). doi:
-    [10.1126/science.185.4154.862](https://doi.org/10.1126/science.185.4154.862).
+<a id="1">1.</a> Grantham, R. *Amino acid difference formula to help
+explain protein evolution*. Science 185, 862–864 (1974). doi:
+[10.1126/science.185.4154.862](https://doi.org/10.1126/science.185.4154.862).
