@@ -6,7 +6,7 @@
 \alias{grantham-package}
 \title{grantham: Grantham distance}
 \description{
-A minimal set of routines to calculate the Grantham distance. The Grantham distance attempts to provide a proxy for the evolutionary distance between two amino acids based on three key chemical properties: composition, polarity and molecular volume. In turn, evolutionary distance is used as a proxy for the impact of missense mutations. The higher the distance, the more deleterious the substitution is expected to be.
+A minimal set of routines to calculate the Grantham distance <doi:10.1126/science.185.4154.862>. The Grantham distance attempts to provide a proxy for the evolutionary distance between two amino acids based on three key chemical properties: composition, polarity and molecular volume. In turn, evolutionary distance is used as a proxy for the impact of missense mutations. The higher the distance, the more deleterious the substitution is expected to be.
 }
 \author{
 \strong{Maintainer}: Ramiro Magno \email{ramiro.magno@gmail.com} (\href{https://orcid.org/0000-0001-5226-3441}{ORCID})
