@@ -1,6 +1,6 @@
 Package: grantham
 Type: Package
-Title: Grantham distance
+Title: Calculate the 'Grantham' Distance
 Version: 0.1.0
 Authors@R: c(
     person(given = "Ramiro", family = "Magno",
@@ -17,8 +17,8 @@ Authors@R: c(
     person("CINTESIS",
     role = c("cph", "fnd"))
     )
-Description: A minimal set of routines to calculate the Grantham distance
-    <doi:10.1126/science.185.4154.862>. The Grantham distance attempts to
+Description: A minimal set of routines to calculate the 'Grantham' distance
+    <doi:10.1126/science.185.4154.862>. The 'Grantham' distance attempts to
     provide a proxy for the evolutionary distance between two amino acids
     based on three key chemical properties: composition, polarity and
     molecular volume. In turn, evolutionary distance is used as a proxy for
@@ -37,5 +37,8 @@ Imports:
     dplyr,
     tidyr,
     rlang
-URL: https://maialab.org/grantham, https://github.com/maialab/grantham
+URL: https://maialab.org/grantham/, https://github.com/maialab/grantham
 BugReports: https://github.com/maialab/grantham/issues
+Suggests: 
+    spelling
+Language: en-US

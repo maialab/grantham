@@ -49,7 +49,7 @@ Science (1974). 185(4154): 862--4 by R. Grantham.
 }
 \details{
 Contrary to Grantham's distances presented in Table 2 of Grantham's paper, the
-distances returned by this funtion are calculated anew starting from the
+distances returned by this function are calculated anew starting from the
 amino acid properties (composition, polarity and molecular volume). No
 rounding to nearest integer is performed.
 }

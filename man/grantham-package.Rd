@@ -4,14 +4,14 @@
 \name{grantham-package}
 \alias{grantham}
 \alias{grantham-package}
-\title{grantham: Grantham distance}
+\title{grantham: Calculate the 'Grantham' Distance}
 \description{
-A minimal set of routines to calculate the Grantham distance <doi:10.1126/science.185.4154.862>. The Grantham distance attempts to provide a proxy for the evolutionary distance between two amino acids based on three key chemical properties: composition, polarity and molecular volume. In turn, evolutionary distance is used as a proxy for the impact of missense mutations. The higher the distance, the more deleterious the substitution is expected to be.
+A minimal set of routines to calculate the 'Grantham' distance <doi:10.1126/science.185.4154.862>. The 'Grantham' distance attempts to provide a proxy for the evolutionary distance between two amino acids based on three key chemical properties: composition, polarity and molecular volume. In turn, evolutionary distance is used as a proxy for the impact of missense mutations. The higher the distance, the more deleterious the substitution is expected to be.
 }
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://maialab.org/grantham}
+  \item \url{https://maialab.org/grantham/}
   \item \url{https://github.com/maialab/grantham}
   \item Report bugs at \url{https://github.com/maialab/grantham/issues}
 }

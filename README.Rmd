@@ -22,7 +22,7 @@ The goal of `{grantham}` is to provide a minimal set of routines to calculate
 the Grantham distance<sup>[1](#1)</sup>.
 
 The Grantham distance attempts to provide a proxy for the evolutionary distance
-between two amino acids based on three key side chani chemical properties:
+between two amino acids based on three key side chain chemical properties:
 composition, polarity and molecular volume. In turn, evolutionary distance is
 used as a proxy for the impact of missense substitutions. The higher the
 distance, the more deleterious the substitution is expected to be.
