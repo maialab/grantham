@@ -37,3 +37,5 @@ Imports:
     dplyr,
     tidyr,
     rlang
+URL: https://maialab.org/grantham, https://github.com/maialab/grantham
+BugReports: https://github.com/maialab/grantham/issues

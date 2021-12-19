@@ -22,10 +22,10 @@ The goal of `{grantham}` is to provide a minimal set of routines to calculate
 the Grantham distance [1].
 
 The Grantham distance attempts to provide a proxy for the evolutionary distance
-between two amino acids based on three key chemical properties: composition,
-polarity and molecular volume. In turn, evolutionary distance is used as a proxy
-for the impact of missense mutations. The higher the distance, the more
-deleterious the substitution is expected to be.
+between two amino acids based on three key side chani chemical properties:
+composition, polarity and molecular volume. In turn, evolutionary distance is
+used as a proxy for the impact of missense substitutions. The higher the
+distance, the more deleterious the substitution is expected to be.
 
 ## Installation
 
@@ -114,7 +114,8 @@ may use the function `grantham_equation()`.
 
 ## Related software
 
-Other sources we've found in the R ecosystem that also provide code for calculation of the Grantham distance:
+Other sources we've found in the R ecosystem that also provide code for
+calculation of the Grantham distance:
 
 - A GitHub Gist by Daniel E Cook provides the function `calculate_grantham()`, see [Fetch_Grantham.R](https://gist.github.com/danielecook/501f03650bca6a3db31ff3af2d413d2a).
 - The `{midasHLA}` package includes the unexported function `distGrantham()` in [utils.R](https://github.com/Genentech/midasHLA/blob/ec29296f9bfd7c4fae9e2040592b618e5f2a99a1/R/utils.R).
