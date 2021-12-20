@@ -82,7 +82,7 @@ And now calculate all Grantham distances for all pairs `aa_pairs`:
 grantham_distance(x = aa_pairs$x, y = aa_pairs$y)
 ```
 
-Because distances are symmetric, and pairs formed by the same amino acid are
+Because distances are symmetric, and for pairs formed by the same amino acid are
 trivially zero, you might want to exclude these pairs:
 
 ```{r}

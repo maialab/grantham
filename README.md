@@ -119,8 +119,8 @@ grantham_distance(x = aa_pairs$x, y = aa_pairs$y)
 #> # … with 390 more rows
 ```
 
-Because distances are symmetric, and pairs formed by the same amino acid
-are trivially zero, you might want to exclude these pairs:
+Because distances are symmetric, and for pairs formed by the same amino
+acid are trivially zero, you might want to exclude these pairs:
 
 ``` r
 # `keep_self = FALSE`: excludes pairs such as ("Ser", "Ser")
