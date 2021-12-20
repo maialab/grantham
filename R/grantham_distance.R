@@ -20,7 +20,7 @@
 #' \eqn{\gamma} are squares of the inverses of mean distances of each property,
 #' respectively.
 #'
-#' The distances reported by Grantham (1972) are further scaled by a factor
+#' The distances reported by Grantham (1974) are further scaled by a factor
 #' ---here coined \eqn{\rho}--- such that the mean of all distances is 100.
 #' Although this factor is not explicitly included in Grantham's distance
 #' formula, it is actually used for calculating the amino acid pair distances
