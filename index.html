@@ -82,14 +82,17 @@
 </h1>
 </div>
 <!-- badges: start -->
-<!-- badges: end -->
+
 <p>The goal of <a href="https://maialab.org/grantham/">grantham</a> is to provide a minimal set of routines to calculate the Grantham distance<sup><a href="#1">1</a></sup>.</p>
 <p>The Grantham distance attempts to provide a proxy for the evolutionary distance between two amino acids based on three key side chain chemical properties: composition, polarity and molecular volume. In turn, evolutionary distance is used as a proxy for the impact of missense substitutions. The higher the distance, the more deleterious the substitution is expected to be.</p>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
-<p>You can install the development version of <a href="https://maialab.org/grantham/">grantham</a> like so:</p>
+<p>Install <a href="https://maialab.org/grantham/">grantham</a> from CRAN:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"grantham"</span><span class="op">)</span></code></pre></div>
+<p>You can install the development version of <a href="https://maialab.org/grantham/">grantham</a> like so:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># install.packages("remotes")</span>
 <span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"maialab/grantham"</span><span class="op">)</span></code></pre></div>
 </div>
@@ -97,7 +100,7 @@
 <h2 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a>
 </h2>
 <p>Grantham distance between two amino acids:</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://maialab.org/grantham/">grantham</a></span><span class="op">)</span>
 
 <span class="fu"><a href="reference/grantham_distance.html">grantham_distance</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">'Ser'</span>, y <span class="op">=</span> <span class="st">'Phe'</span><span class="op">)</span>
@@ -106,7 +109,7 @@
 <span class="co">#&gt;   &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt;</span>
 <span class="co">#&gt; 1 Ser   Phe     155</span></code></pre></div>
 <p>The function <code><a href="reference/grantham_distance.html">grantham_distance()</a></code> is vectorised with amino acids being matched element-wise to form pairs for comparison:</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/grantham_distance.html">grantham_distance</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'Ser'</span>, <span class="st">'Arg'</span><span class="op">)</span>, y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'Phe'</span>, <span class="st">'Leu'</span><span class="op">)</span><span class="op">)</span>
 <span class="co">#&gt; # A tibble: 2 × 3</span>
 <span class="co">#&gt;   x     y         d</span>
@@ -114,7 +117,7 @@
 <span class="co">#&gt; 1 Ser   Phe     155</span>
 <span class="co">#&gt; 2 Arg   Leu     102</span></code></pre></div>
 <p>The two vectors of amino acids must have compatible sizes in the sense of <a href="https://vctrs.r-lib.org/reference/vec_recycle.html" class="external-link">vec_recycle()</a> for element recycling to be possible, i.e., either the two vectors have the same length, or one of them is of length one, and it is recycled up to the length of the other.</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># `'Ser'` is recycled to match the length of the second vector, i.e. 3.</span>
 <span class="fu"><a href="reference/grantham_distance.html">grantham_distance</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">'Ser'</span>, y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'Phe'</span>, <span class="st">'Leu'</span>, <span class="st">'Arg'</span><span class="op">)</span><span class="op">)</span>
 <span class="co">#&gt; # A tibble: 3 × 3</span>
@@ -124,7 +127,7 @@
 <span class="co">#&gt; 2 Ser   Leu     145</span>
 <span class="co">#&gt; 3 Ser   Arg     110</span></code></pre></div>
 <p>Use the function <code><a href="reference/amino_acid_pairs.html">amino_acid_pairs()</a></code> to generate all 20 x 20 amino acid pairs:</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">aa_pairs</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/amino_acid_pairs.html">amino_acid_pairs</a></span><span class="op">(</span><span class="op">)</span>
 <span class="va">aa_pairs</span>
 <span class="co">#&gt; # A tibble: 400 × 2</span>
@@ -142,7 +145,7 @@
 <span class="co">#&gt; 10 Ser   Phe  </span>
 <span class="co">#&gt; # … with 390 more rows</span></code></pre></div>
 <p>And now calculate all Grantham distances for all pairs <code>aa_pairs</code>:</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/grantham_distance.html">grantham_distance</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">aa_pairs</span><span class="op">$</span><span class="va">x</span>, y <span class="op">=</span> <span class="va">aa_pairs</span><span class="op">$</span><span class="va">y</span><span class="op">)</span>
 <span class="co">#&gt; # A tibble: 400 × 3</span>
 <span class="co">#&gt;    x     y         d</span>
@@ -158,8 +161,8 @@
 <span class="co">#&gt;  9 Ser   Ile     142</span>
 <span class="co">#&gt; 10 Ser   Phe     155</span>
 <span class="co">#&gt; # … with 390 more rows</span></code></pre></div>
-<p>Because distances are symmetric, and pairs formed by the same amino acid are trivially zero, you might want to exclude these pairs:</p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<p>Because distances are symmetric, and for pairs formed by the same amino acid are trivially zero, you might want to exclude these pairs:</p>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># `keep_self = FALSE`: excludes pairs such as ("Ser", "Ser")</span>
 <span class="co"># `keep_reverses = FALSE`: excludes reversed pairs, e.g. ("Arg", "Ser") will be</span>
 <span class="co"># removed because ("Ser", "Arg") already exists.</span>
@@ -208,7 +211,7 @@
 <li>molecular volume (<em>v</em>)</li>
 </ul>
 <p>We provide a data set with these properties:</p>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">amino_acids_properties</span>
 <span class="co">#&gt; # A tibble: 20 × 4</span>
 <span class="co">#&gt;    amino_acid     c     p     v</span>
@@ -299,7 +302,12 @@
 </ul>
 </div>
 
-
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://CRAN.R-project.org/package=grantham" class="external-link"><img src="https://www.r-pkg.org/badges/version/grantham" alt="CRAN status"></a></li>
+</ul>
+</div>
 
   </aside>
 </div>
