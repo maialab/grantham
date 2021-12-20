@@ -4,6 +4,9 @@
 # grantham <img src='man/figures/logo.svg' align="right" height="139" />
 
 <!-- badges: start -->
+
+[![CRAN
+status](https://www.r-pkg.org/badges/version/grantham)](https://CRAN.R-project.org/package=grantham)
 <!-- badges: end -->
 
 The goal of `{grantham}` is to provide a minimal set of routines to
@@ -17,6 +20,12 @@ substitutions. The higher the distance, the more deleterious the
 substitution is expected to be.
 
 ## Installation
+
+Install `{grantham}` from CRAN:
+
+``` r
+install.packages("grantham")
+```
 
 You can install the development version of `{grantham}` like so:
 
