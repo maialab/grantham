@@ -19,6 +19,9 @@
     <loc>https://maialab.org/grantham/index.html</loc>
   </url>
   <url>
+    <loc>https://maialab.org/grantham/news/index.html</loc>
+  </url>
+  <url>
     <loc>https://maialab.org/grantham/reference/amino_acid_pairs.html</loc>
   </url>
   <url>
@@ -26,6 +29,12 @@
   </url>
   <url>
     <loc>https://maialab.org/grantham/reference/amino_acids_properties.html</loc>
+  </url>
+  <url>
+    <loc>https://maialab.org/grantham/reference/as_one_letter.html</loc>
+  </url>
+  <url>
+    <loc>https://maialab.org/grantham/reference/as_three_letter.html</loc>
   </url>
   <url>
     <loc>https://maialab.org/grantham/reference/grantham-package.html</loc>
