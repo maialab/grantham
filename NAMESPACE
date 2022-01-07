@@ -3,6 +3,8 @@
 export("%>%")
 export(amino_acid_pairs)
 export(amino_acids)
+export(as_one_letter)
+export(as_three_letter)
 export(grantham_distance)
 export(grantham_distance_exact)
 export(grantham_distance_original)

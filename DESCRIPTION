@@ -1,7 +1,7 @@
 Package: grantham
 Type: Package
 Title: Calculate the 'Grantham' Distance
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: c(
     person(given = "Ramiro", family = "Magno",
       email = "ramiro.magno@gmail.com",
@@ -36,7 +36,8 @@ Imports:
     vctrs,
     dplyr,
     tidyr,
-    rlang
+    rlang,
+    stringr
 URL: https://maialab.org/grantham/, https://github.com/maialab/grantham
 BugReports: https://github.com/maialab/grantham/issues
 Suggests: 

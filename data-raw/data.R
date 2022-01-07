@@ -50,12 +50,64 @@ mean_chemical_distance <-
 # the original paper to avoid confusion.
 mean_weighting_factors <- c('alpha' = 1.833, 'beta' = 0.1018, 'gamma' = 0.000399)
 
+one_letter_codes <- c(
+  'A', # Alanine
+  'R', # Arginine
+  'N', # Asparagine
+  'D', # Aspartic acid
+  'B', # Asparagine or aspartic acid
+  'C', # Cysteine
+  'E', # Glutamic acid
+  'Q', # Glutamine
+  'Z', # Glutamine or glutamic acid
+  'G', # Glycine
+  'H', # Histidine
+  'I', # Isoleucine
+  'L', # Leucine
+  'K', # Lysine
+  'M', # Methionine
+  'F', # Phenylalanine
+  'P', # Proline
+  'S', # Serine
+  'T', # Threonine
+  'W', # Tryptophan
+  'Y', # Tyrosine
+  'V'  # Valine
+)
+
+three_letter_codes <- c(
+  'Ala', # Alanine
+  'Arg', # Arginine
+  'Asn', # Asparagine
+  'Asp', # Aspartic acid
+  'Asx', # Asparagine or aspartic acid
+  'Cys', # Cysteine
+  'Glu', # Glutamic acid
+  'Gln', # Glutamine
+  'Glx', # Glutamine or glutamic acid
+  'Gly', # Glycine
+  'His', # Histidine
+  'Ile', # Isoleucine
+  'Leu', # Leucine
+  'Lys', # Lysine
+  'Met', # Methionine
+  'Phe', # Phenylalanine
+  'Pro', # Proline
+  'Ser', # Serine
+  'Thr', # Threonine
+  'Trp', # Tryptophan
+  'Tyr', # Tyrosine
+  'Val'  # Valine
+)
+
 # These variables end up in R/sysdata.rda
 usethis::use_data(
   amino_acids_properties,
   grantham_distances_matrix,
   mean_chemical_distance,
   mean_weighting_factors,
+  one_letter_codes,
+  three_letter_codes,
   internal = TRUE,
   overwrite = TRUE
 )
