@@ -9,3 +9,4 @@
 ^\.github$
 ^CRAN-RELEASE$
 ^_pkgdown\.yml$
+^cran-comments\.md$
