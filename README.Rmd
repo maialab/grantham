@@ -127,6 +127,9 @@ calculation of the Grantham distance:
 - A GitHub Gist by Daniel E Cook provides the function `calculate_grantham()`, see [Fetch_Grantham.R](https://gist.github.com/danielecook/501f03650bca6a3db31ff3af2d413d2a).
 - The `{midasHLA}` package includes the unexported function `distGrantham()` in [utils.R](https://github.com/Genentech/midasHLA/blob/ec29296f9bfd7c4fae9e2040592b618e5f2a99a1/R/utils.R).
 - The `{HLAdivR}` package exports a data set with the Grantham distances in the format of a matrix, see [data.R]( https://github.com/rbentham/HLAdivR/blob/master/R/data.R).
+- The Bioconductor package `{MSA2dist}` by Kristian K. Ullrich provides the
+function
+[`aastring2dist()`](https://www.bioconductor.org/packages/devel/bioc/vignettes/MSA2dist/inst/doc/MSA2dist.html#granthams-distance).
 
 ## Code of Conduct
   

@@ -97,6 +97,7 @@ aa_pairs
 #>  9 Ser   Ile  
 #> 10 Ser   Phe  
 #> # … with 390 more rows
+#> # ℹ Use `print(n = ...)` to see more rows
 ```
 
 And now calculate all Grantham distances for all pairs `aa_pairs`:
@@ -117,6 +118,7 @@ grantham_distance(x = aa_pairs$x, y = aa_pairs$y)
 #>  9 Ser   Ile     142
 #> 10 Ser   Phe     155
 #> # … with 390 more rows
+#> # ℹ Use `print(n = ...)` to see more rows
 ```
 
 Because distances are symmetric, and for pairs formed by the same amino
@@ -145,6 +147,7 @@ aa_pairs
 #>  9 Ser   Phe  
 #> 10 Ser   Tyr  
 #> # … with 180 more rows
+#> # ℹ Use `print(n = ...)` to see more rows
 
 # Grantham distance for the 190 unique amino acid pairs
 grantham_distance(x = aa_pairs$x, y = aa_pairs$y)
@@ -162,19 +165,28 @@ grantham_distance(x = aa_pairs$x, y = aa_pairs$y)
 #>  9 Ser   Phe     155
 #> 10 Ser   Tyr     144
 #> # … with 180 more rows
+#> # ℹ Use `print(n = ...)` to see more rows
 ```
 
-The Grantham distance *d*<sub>*i*, *j*</sub> for two amino acids *i* and
-*j* is:
+The Grantham distance
+![d\_{i,j}](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;d_%7Bi%2Cj%7D "d_{i,j}")
+for two amino acids
+![i](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;i "i")
+and
+![j](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;j "j")
+is:
 
-*d*<sub>*i*, *j*</sub> = *ρ*(*α*(*c*<sub>*i*</sub>−*c*<sub>*j*</sub>)<sup>2</sup>+*β*(*p*<sub>*i*</sub>−*p*<sub>*j*</sub>)<sup>2</sup>+*γ*(*v*<sub>*i*</sub>−*v*<sub>*j*</sub>)<sup>2</sup>)<sup>1/2</sup> .
+![d\_{i,j} = \rho (\alpha (c_i-c_j)^2+\beta (p_i-p_j)^2+ \gamma (v_i-v_j)^2)^{1/2}\\ .](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;d_%7Bi%2Cj%7D%20%3D%20%5Crho%20%28%5Calpha%20%28c_i-c_j%29%5E2%2B%5Cbeta%20%28p_i-p_j%29%5E2%2B%20%5Cgamma%20%28v_i-v_j%29%5E2%29%5E%7B1%2F2%7D%5C%20. "d_{i,j} = \rho (\alpha (c_i-c_j)^2+\beta (p_i-p_j)^2+ \gamma (v_i-v_j)^2)^{1/2}\ .")
 
 The distance is based on three chemical properties of amino acid side
 chains:
 
--   composition (*c*)
--   polarity (*p*)
--   molecular volume (*v*)
+-   composition
+    (![c](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;c "c"))
+-   polarity
+    (![p](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;p "p"))
+-   molecular volume
+    (![v](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;v "v"))
 
 We provide a data set with these properties:
 
@@ -222,6 +234,9 @@ calculation of the Grantham distance:
 -   The `{HLAdivR}` package exports a data set with the Grantham
     distances in the format of a matrix, see
     [data.R](https://github.com/rbentham/HLAdivR/blob/master/R/data.R).
+-   The Bioconductor package `{MSA2dist}` by Kristian K. Ullrich
+    provides the function
+    [`aastring2dist()`](https://www.bioconductor.org/packages/devel/bioc/vignettes/MSA2dist/inst/doc/MSA2dist.html#granthams-distance).
 
 ## Code of Conduct
 
