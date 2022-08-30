@@ -20,8 +20,8 @@
 <link rel="apple-touch-icon" type="image/png" sizes="76x76" href="apple-touch-icon-76x76.png">
 <link rel="apple-touch-icon" type="image/png" sizes="60x60" href="apple-touch-icon-60x60.png">
 <script src="deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="deps/bootstrap-5.1.0/bootstrap.min.css" rel="stylesheet">
-<script src="deps/bootstrap-5.1.0/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
+<link href="deps/bootstrap-5.1.3/bootstrap.min.css" rel="stylesheet">
+<script src="deps/bootstrap-5.1.3/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- bootstrap-toc --><script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="Calculate the Grantham Distance">
 <meta property="og:description" content="A minimal set of routines to calculate the Grantham distance
@@ -85,7 +85,6 @@
 </h1>
 </div>
 <!-- badges: start -->
-
 <p>The goal of <a href="https://maialab.org/grantham/">grantham</a> is to provide a minimal set of routines to calculate the Grantham distance<sup><a href="#1">1</a></sup>.</p>
 <p>The Grantham distance attempts to provide a proxy for the evolutionary distance between two amino acids based on three key side chain chemical properties: composition, polarity and molecular volume. In turn, evolutionary distance is used as a proxy for the impact of missense substitutions. The higher the distance, the more deleterious the substitution is expected to be.</p>
 <div class="section level2">
@@ -93,152 +92,158 @@
 </h2>
 <p>Install <a href="https://maialab.org/grantham/">grantham</a> from CRAN:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"grantham"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"grantham"</span><span class="op">)</span></span></code></pre></div>
 <p>You can install the development version of <a href="https://maialab.org/grantham/">grantham</a> like so:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># install.packages("remotes")</span>
-<span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"maialab/grantham"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># install.packages("remotes")</span></span>
+<span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"maialab/grantham"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a>
 </h2>
 <p>Grantham distance between two amino acids:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://maialab.org/grantham/">grantham</a></span><span class="op">)</span>
-
-<span class="fu"><a href="reference/grantham_distance.html">grantham_distance</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">'Ser'</span>, y <span class="op">=</span> <span class="st">'Phe'</span><span class="op">)</span>
-<span class="co">#&gt; # A tibble: 1 × 3</span>
-<span class="co">#&gt;   x     y         d</span>
-<span class="co">#&gt;   &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt;</span>
-<span class="co">#&gt; 1 Ser   Phe     155</span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://maialab.org/grantham/">grantham</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="reference/grantham_distance.html">grantham_distance</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">'Ser'</span>, y <span class="op">=</span> <span class="st">'Phe'</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 1 × 3</span></span>
+<span><span class="co">#&gt;   x     y         d</span></span>
+<span><span class="co">#&gt;   &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt; 1 Ser   Phe     155</span></span></code></pre></div>
 <p>The function <code><a href="reference/grantham_distance.html">grantham_distance()</a></code> is vectorised with amino acids being matched element-wise to form pairs for comparison:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="reference/grantham_distance.html">grantham_distance</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'Ser'</span>, <span class="st">'Arg'</span><span class="op">)</span>, y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'Phe'</span>, <span class="st">'Leu'</span><span class="op">)</span><span class="op">)</span>
-<span class="co">#&gt; # A tibble: 2 × 3</span>
-<span class="co">#&gt;   x     y         d</span>
-<span class="co">#&gt;   &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt;</span>
-<span class="co">#&gt; 1 Ser   Phe     155</span>
-<span class="co">#&gt; 2 Arg   Leu     102</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="reference/grantham_distance.html">grantham_distance</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'Ser'</span>, <span class="st">'Arg'</span><span class="op">)</span>, y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'Phe'</span>, <span class="st">'Leu'</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 2 × 3</span></span>
+<span><span class="co">#&gt;   x     y         d</span></span>
+<span><span class="co">#&gt;   &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt; 1 Ser   Phe     155</span></span>
+<span><span class="co">#&gt; 2 Arg   Leu     102</span></span></code></pre></div>
 <p>The two vectors of amino acids must have compatible sizes in the sense of <a href="https://vctrs.r-lib.org/reference/vec_recycle.html" class="external-link">vec_recycle()</a> for element recycling to be possible, i.e., either the two vectors have the same length, or one of them is of length one, and it is recycled up to the length of the other.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># `'Ser'` is recycled to match the length of the second vector, i.e. 3.</span>
-<span class="fu"><a href="reference/grantham_distance.html">grantham_distance</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">'Ser'</span>, y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'Phe'</span>, <span class="st">'Leu'</span>, <span class="st">'Arg'</span><span class="op">)</span><span class="op">)</span>
-<span class="co">#&gt; # A tibble: 3 × 3</span>
-<span class="co">#&gt;   x     y         d</span>
-<span class="co">#&gt;   &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt;</span>
-<span class="co">#&gt; 1 Ser   Phe     155</span>
-<span class="co">#&gt; 2 Ser   Leu     145</span>
-<span class="co">#&gt; 3 Ser   Arg     110</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># `'Ser'` is recycled to match the length of the second vector, i.e. 3.</span></span>
+<span><span class="fu"><a href="reference/grantham_distance.html">grantham_distance</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">'Ser'</span>, y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'Phe'</span>, <span class="st">'Leu'</span>, <span class="st">'Arg'</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 3 × 3</span></span>
+<span><span class="co">#&gt;   x     y         d</span></span>
+<span><span class="co">#&gt;   &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt; 1 Ser   Phe     155</span></span>
+<span><span class="co">#&gt; 2 Ser   Leu     145</span></span>
+<span><span class="co">#&gt; 3 Ser   Arg     110</span></span></code></pre></div>
 <p>Use the function <code><a href="reference/amino_acid_pairs.html">amino_acid_pairs()</a></code> to generate all 20 x 20 amino acid pairs:</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">aa_pairs</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/amino_acid_pairs.html">amino_acid_pairs</a></span><span class="op">(</span><span class="op">)</span>
-<span class="va">aa_pairs</span>
-<span class="co">#&gt; # A tibble: 400 × 2</span>
-<span class="co">#&gt;    x     y    </span>
-<span class="co">#&gt;    &lt;chr&gt; &lt;chr&gt;</span>
-<span class="co">#&gt;  1 Ser   Ser  </span>
-<span class="co">#&gt;  2 Ser   Arg  </span>
-<span class="co">#&gt;  3 Ser   Leu  </span>
-<span class="co">#&gt;  4 Ser   Pro  </span>
-<span class="co">#&gt;  5 Ser   Thr  </span>
-<span class="co">#&gt;  6 Ser   Ala  </span>
-<span class="co">#&gt;  7 Ser   Val  </span>
-<span class="co">#&gt;  8 Ser   Gly  </span>
-<span class="co">#&gt;  9 Ser   Ile  </span>
-<span class="co">#&gt; 10 Ser   Phe  </span>
-<span class="co">#&gt; # … with 390 more rows</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">aa_pairs</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/amino_acid_pairs.html">amino_acid_pairs</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">aa_pairs</span></span>
+<span><span class="co">#&gt; # A tibble: 400 × 2</span></span>
+<span><span class="co">#&gt;    x     y    </span></span>
+<span><span class="co">#&gt;    &lt;chr&gt; &lt;chr&gt;</span></span>
+<span><span class="co">#&gt;  1 Ser   Ser  </span></span>
+<span><span class="co">#&gt;  2 Ser   Arg  </span></span>
+<span><span class="co">#&gt;  3 Ser   Leu  </span></span>
+<span><span class="co">#&gt;  4 Ser   Pro  </span></span>
+<span><span class="co">#&gt;  5 Ser   Thr  </span></span>
+<span><span class="co">#&gt;  6 Ser   Ala  </span></span>
+<span><span class="co">#&gt;  7 Ser   Val  </span></span>
+<span><span class="co">#&gt;  8 Ser   Gly  </span></span>
+<span><span class="co">#&gt;  9 Ser   Ile  </span></span>
+<span><span class="co">#&gt; 10 Ser   Phe  </span></span>
+<span><span class="co">#&gt; # … with 390 more rows</span></span>
+<span><span class="co">#&gt; # ℹ Use `print(n = ...)` to see more rows</span></span></code></pre></div>
 <p>And now calculate all Grantham distances for all pairs <code>aa_pairs</code>:</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="reference/grantham_distance.html">grantham_distance</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">aa_pairs</span><span class="op">$</span><span class="va">x</span>, y <span class="op">=</span> <span class="va">aa_pairs</span><span class="op">$</span><span class="va">y</span><span class="op">)</span>
-<span class="co">#&gt; # A tibble: 400 × 3</span>
-<span class="co">#&gt;    x     y         d</span>
-<span class="co">#&gt;    &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt;</span>
-<span class="co">#&gt;  1 Ser   Ser       0</span>
-<span class="co">#&gt;  2 Ser   Arg     110</span>
-<span class="co">#&gt;  3 Ser   Leu     145</span>
-<span class="co">#&gt;  4 Ser   Pro      74</span>
-<span class="co">#&gt;  5 Ser   Thr      58</span>
-<span class="co">#&gt;  6 Ser   Ala      99</span>
-<span class="co">#&gt;  7 Ser   Val     124</span>
-<span class="co">#&gt;  8 Ser   Gly      56</span>
-<span class="co">#&gt;  9 Ser   Ile     142</span>
-<span class="co">#&gt; 10 Ser   Phe     155</span>
-<span class="co">#&gt; # … with 390 more rows</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="reference/grantham_distance.html">grantham_distance</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">aa_pairs</span><span class="op">$</span><span class="va">x</span>, y <span class="op">=</span> <span class="va">aa_pairs</span><span class="op">$</span><span class="va">y</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 400 × 3</span></span>
+<span><span class="co">#&gt;    x     y         d</span></span>
+<span><span class="co">#&gt;    &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt;  1 Ser   Ser       0</span></span>
+<span><span class="co">#&gt;  2 Ser   Arg     110</span></span>
+<span><span class="co">#&gt;  3 Ser   Leu     145</span></span>
+<span><span class="co">#&gt;  4 Ser   Pro      74</span></span>
+<span><span class="co">#&gt;  5 Ser   Thr      58</span></span>
+<span><span class="co">#&gt;  6 Ser   Ala      99</span></span>
+<span><span class="co">#&gt;  7 Ser   Val     124</span></span>
+<span><span class="co">#&gt;  8 Ser   Gly      56</span></span>
+<span><span class="co">#&gt;  9 Ser   Ile     142</span></span>
+<span><span class="co">#&gt; 10 Ser   Phe     155</span></span>
+<span><span class="co">#&gt; # … with 390 more rows</span></span>
+<span><span class="co">#&gt; # ℹ Use `print(n = ...)` to see more rows</span></span></code></pre></div>
 <p>Because distances are symmetric, and for pairs formed by the same amino acid are trivially zero, you might want to exclude these pairs:</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># `keep_self = FALSE`: excludes pairs such as ("Ser", "Ser")</span>
-<span class="co"># `keep_reverses = FALSE`: excludes reversed pairs, e.g. ("Arg", "Ser") will be</span>
-<span class="co"># removed because ("Ser", "Arg") already exists.</span>
-<span class="va">aa_pairs</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/amino_acid_pairs.html">amino_acid_pairs</a></span><span class="op">(</span>keep_self <span class="op">=</span> <span class="cn">FALSE</span>, keep_reverses <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
-
-<span class="co"># These amino acid pairs are the 190 pairs shown in Table 2 of Grantham's</span>
-<span class="co"># original publication.</span>
-<span class="va">aa_pairs</span>
-<span class="co">#&gt; # A tibble: 190 × 2</span>
-<span class="co">#&gt;    x     y    </span>
-<span class="co">#&gt;    &lt;chr&gt; &lt;chr&gt;</span>
-<span class="co">#&gt;  1 Ser   Arg  </span>
-<span class="co">#&gt;  2 Ser   Leu  </span>
-<span class="co">#&gt;  3 Ser   Pro  </span>
-<span class="co">#&gt;  4 Ser   Thr  </span>
-<span class="co">#&gt;  5 Ser   Ala  </span>
-<span class="co">#&gt;  6 Ser   Val  </span>
-<span class="co">#&gt;  7 Ser   Gly  </span>
-<span class="co">#&gt;  8 Ser   Ile  </span>
-<span class="co">#&gt;  9 Ser   Phe  </span>
-<span class="co">#&gt; 10 Ser   Tyr  </span>
-<span class="co">#&gt; # … with 180 more rows</span>
-
-<span class="co"># Grantham distance for the 190 unique amino acid pairs</span>
-<span class="fu"><a href="reference/grantham_distance.html">grantham_distance</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">aa_pairs</span><span class="op">$</span><span class="va">x</span>, y <span class="op">=</span> <span class="va">aa_pairs</span><span class="op">$</span><span class="va">y</span><span class="op">)</span>
-<span class="co">#&gt; # A tibble: 190 × 3</span>
-<span class="co">#&gt;    x     y         d</span>
-<span class="co">#&gt;    &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt;</span>
-<span class="co">#&gt;  1 Ser   Arg     110</span>
-<span class="co">#&gt;  2 Ser   Leu     145</span>
-<span class="co">#&gt;  3 Ser   Pro      74</span>
-<span class="co">#&gt;  4 Ser   Thr      58</span>
-<span class="co">#&gt;  5 Ser   Ala      99</span>
-<span class="co">#&gt;  6 Ser   Val     124</span>
-<span class="co">#&gt;  7 Ser   Gly      56</span>
-<span class="co">#&gt;  8 Ser   Ile     142</span>
-<span class="co">#&gt;  9 Ser   Phe     155</span>
-<span class="co">#&gt; 10 Ser   Tyr     144</span>
-<span class="co">#&gt; # … with 180 more rows</span></code></pre></div>
-<p>The Grantham distance <em>d</em><sub><em>i</em>, <em>j</em></sub> for two amino acids <em>i</em> and <em>j</em> is:</p>
-<p><em>d</em><sub><em>i</em>, <em>j</em></sub> = <em>ρ</em>(<em>α</em>(<em>c</em><sub><em>i</em></sub>−<em>c</em><sub><em>j</em></sub>)<sup>2</sup>+<em>β</em>(<em>p</em><sub><em>i</em></sub>−<em>p</em><sub><em>j</em></sub>)<sup>2</sup>+<em>γ</em>(<em>v</em><sub><em>i</em></sub>−<em>v</em><sub><em>j</em></sub>)<sup>2</sup>)<sup>1/2</sup> .</p>
+<code class="sourceCode R"><span><span class="co"># `keep_self = FALSE`: excludes pairs such as ("Ser", "Ser")</span></span>
+<span><span class="co"># `keep_reverses = FALSE`: excludes reversed pairs, e.g. ("Arg", "Ser") will be</span></span>
+<span><span class="co"># removed because ("Ser", "Arg") already exists.</span></span>
+<span><span class="va">aa_pairs</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/amino_acid_pairs.html">amino_acid_pairs</a></span><span class="op">(</span>keep_self <span class="op">=</span> <span class="cn">FALSE</span>, keep_reverses <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># These amino acid pairs are the 190 pairs shown in Table 2 of Grantham's</span></span>
+<span><span class="co"># original publication.</span></span>
+<span><span class="va">aa_pairs</span></span>
+<span><span class="co">#&gt; # A tibble: 190 × 2</span></span>
+<span><span class="co">#&gt;    x     y    </span></span>
+<span><span class="co">#&gt;    &lt;chr&gt; &lt;chr&gt;</span></span>
+<span><span class="co">#&gt;  1 Ser   Arg  </span></span>
+<span><span class="co">#&gt;  2 Ser   Leu  </span></span>
+<span><span class="co">#&gt;  3 Ser   Pro  </span></span>
+<span><span class="co">#&gt;  4 Ser   Thr  </span></span>
+<span><span class="co">#&gt;  5 Ser   Ala  </span></span>
+<span><span class="co">#&gt;  6 Ser   Val  </span></span>
+<span><span class="co">#&gt;  7 Ser   Gly  </span></span>
+<span><span class="co">#&gt;  8 Ser   Ile  </span></span>
+<span><span class="co">#&gt;  9 Ser   Phe  </span></span>
+<span><span class="co">#&gt; 10 Ser   Tyr  </span></span>
+<span><span class="co">#&gt; # … with 180 more rows</span></span>
+<span><span class="co">#&gt; # ℹ Use `print(n = ...)` to see more rows</span></span>
+<span></span>
+<span><span class="co"># Grantham distance for the 190 unique amino acid pairs</span></span>
+<span><span class="fu"><a href="reference/grantham_distance.html">grantham_distance</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">aa_pairs</span><span class="op">$</span><span class="va">x</span>, y <span class="op">=</span> <span class="va">aa_pairs</span><span class="op">$</span><span class="va">y</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 190 × 3</span></span>
+<span><span class="co">#&gt;    x     y         d</span></span>
+<span><span class="co">#&gt;    &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt;  1 Ser   Arg     110</span></span>
+<span><span class="co">#&gt;  2 Ser   Leu     145</span></span>
+<span><span class="co">#&gt;  3 Ser   Pro      74</span></span>
+<span><span class="co">#&gt;  4 Ser   Thr      58</span></span>
+<span><span class="co">#&gt;  5 Ser   Ala      99</span></span>
+<span><span class="co">#&gt;  6 Ser   Val     124</span></span>
+<span><span class="co">#&gt;  7 Ser   Gly      56</span></span>
+<span><span class="co">#&gt;  8 Ser   Ile     142</span></span>
+<span><span class="co">#&gt;  9 Ser   Phe     155</span></span>
+<span><span class="co">#&gt; 10 Ser   Tyr     144</span></span>
+<span><span class="co">#&gt; # … with 180 more rows</span></span>
+<span><span class="co">#&gt; # ℹ Use `print(n = ...)` to see more rows</span></span></code></pre></div>
+<p>The Grantham distance <img src="https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&amp;space;%5Cbg_white&amp;space;d_%7Bi%2Cj%7D" title="d_{i,j}" alt="d_{i,j}"> for two amino acids <img src="https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&amp;space;%5Cbg_white&amp;space;i" title="i" alt="i"> and <img src="https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&amp;space;%5Cbg_white&amp;space;j" title="j" alt="j"> is:</p>
+<div class="figure">
+<img src="https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&amp;space;%5Cbg_white&amp;space;d_%7Bi%2Cj%7D%20%3D%20%5Crho%20%28%5Calpha%20%28c_i-c_j%29%5E2%2B%5Cbeta%20%28p_i-p_j%29%5E2%2B%20%5Cgamma%20%28v_i-v_j%29%5E2%29%5E%7B1%2F2%7D%5C%20." title="d_{i,j} = \rho (\alpha (c_i-c_j)^2+\beta (p_i-p_j)^2+ \gamma (v_i-v_j)^2)^{1/2} ." alt=""><p class="caption">d_{i,j} = ((c_i-c_j)<sup>2+(p_i-p_j)</sup>2+ (v_i-v_j)<sup>2)</sup>{1/2}\ .</p>
+</div>
 <p>The distance is based on three chemical properties of amino acid side chains:</p>
 <ul>
-<li>composition (<em>c</em>)</li>
-<li>polarity (<em>p</em>)</li>
-<li>molecular volume (<em>v</em>)</li>
+<li>composition (<img src="https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&amp;space;%5Cbg_white&amp;space;c" title="c" alt="c">)</li>
+<li>polarity (<img src="https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&amp;space;%5Cbg_white&amp;space;p" title="p" alt="p">)</li>
+<li>molecular volume (<img src="https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&amp;space;%5Cbg_white&amp;space;v" title="v" alt="v">)</li>
 </ul>
 <p>We provide a data set with these properties:</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">amino_acids_properties</span>
-<span class="co">#&gt; # A tibble: 20 × 4</span>
-<span class="co">#&gt;    amino_acid     c     p     v</span>
-<span class="co">#&gt;    &lt;chr&gt;      &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span>
-<span class="co">#&gt;  1 Ser         1.42   9.2  32  </span>
-<span class="co">#&gt;  2 Arg         0.65  10.5 124  </span>
-<span class="co">#&gt;  3 Leu         0      4.9 111  </span>
-<span class="co">#&gt;  4 Pro         0.39   8    32.5</span>
-<span class="co">#&gt;  5 Thr         0.71   8.6  61  </span>
-<span class="co">#&gt;  6 Ala         0      8.1  31  </span>
-<span class="co">#&gt;  7 Val         0      5.9  84  </span>
-<span class="co">#&gt;  8 Gly         0.74   9     3  </span>
-<span class="co">#&gt;  9 Ile         0      5.2 111  </span>
-<span class="co">#&gt; 10 Phe         0      5.2 132  </span>
-<span class="co">#&gt; 11 Tyr         0.2    6.2 136  </span>
-<span class="co">#&gt; 12 Cys         2.75   5.5  55  </span>
-<span class="co">#&gt; 13 His         0.58  10.4  96  </span>
-<span class="co">#&gt; 14 Gln         0.89  10.5  85  </span>
-<span class="co">#&gt; 15 Asn         1.33  11.6  56  </span>
-<span class="co">#&gt; 16 Lys         0.33  11.3 119  </span>
-<span class="co">#&gt; 17 Asp         1.38  13    54  </span>
-<span class="co">#&gt; 18 Glu         0.92  12.3  83  </span>
-<span class="co">#&gt; 19 Met         0      5.7 105  </span>
-<span class="co">#&gt; 20 Trp         0.13   5.4 170</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">amino_acids_properties</span></span>
+<span><span class="co">#&gt; # A tibble: 20 × 4</span></span>
+<span><span class="co">#&gt;    amino_acid     c     p     v</span></span>
+<span><span class="co">#&gt;    &lt;chr&gt;      &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt;  1 Ser         1.42   9.2  32  </span></span>
+<span><span class="co">#&gt;  2 Arg         0.65  10.5 124  </span></span>
+<span><span class="co">#&gt;  3 Leu         0      4.9 111  </span></span>
+<span><span class="co">#&gt;  4 Pro         0.39   8    32.5</span></span>
+<span><span class="co">#&gt;  5 Thr         0.71   8.6  61  </span></span>
+<span><span class="co">#&gt;  6 Ala         0      8.1  31  </span></span>
+<span><span class="co">#&gt;  7 Val         0      5.9  84  </span></span>
+<span><span class="co">#&gt;  8 Gly         0.74   9     3  </span></span>
+<span><span class="co">#&gt;  9 Ile         0      5.2 111  </span></span>
+<span><span class="co">#&gt; 10 Phe         0      5.2 132  </span></span>
+<span><span class="co">#&gt; 11 Tyr         0.2    6.2 136  </span></span>
+<span><span class="co">#&gt; 12 Cys         2.75   5.5  55  </span></span>
+<span><span class="co">#&gt; 13 His         0.58  10.4  96  </span></span>
+<span><span class="co">#&gt; 14 Gln         0.89  10.5  85  </span></span>
+<span><span class="co">#&gt; 15 Asn         1.33  11.6  56  </span></span>
+<span><span class="co">#&gt; 16 Lys         0.33  11.3 119  </span></span>
+<span><span class="co">#&gt; 17 Asp         1.38  13    54  </span></span>
+<span><span class="co">#&gt; 18 Glu         0.92  12.3  83  </span></span>
+<span><span class="co">#&gt; 19 Met         0      5.7 105  </span></span>
+<span><span class="co">#&gt; 20 Trp         0.13   5.4 170</span></span></code></pre></div>
 <p>If you want to calculate the Grantham distance from these property values you may use the function <code><a href="reference/grantham_equation.html">grantham_equation()</a></code>.</p>
 </div>
 <div class="section level2">
@@ -249,6 +254,7 @@
 <li>A GitHub Gist by Daniel E Cook provides the function <code>calculate_grantham()</code>, see <a href="https://gist.github.com/danielecook/501f03650bca6a3db31ff3af2d413d2a" class="external-link">Fetch_Grantham.R</a>.</li>
 <li>The <code>{midasHLA}</code> package includes the unexported function <code>distGrantham()</code> in <a href="https://github.com/Genentech/midasHLA/blob/ec29296f9bfd7c4fae9e2040592b618e5f2a99a1/R/utils.R" class="external-link">utils.R</a>.</li>
 <li>The <code>{HLAdivR}</code> package exports a data set with the Grantham distances in the format of a matrix, see <a href="https://github.com/rbentham/HLAdivR/blob/master/R/data.R" class="external-link">data.R</a>.</li>
+<li>The Bioconductor package <code>{MSA2dist}</code> by Kristian K. Ullrich provides the function <a href="https://www.bioconductor.org/packages/devel/bioc/vignettes/MSA2dist/inst/doc/MSA2dist.html#granthams-distance" class="external-link"><code>aastring2dist()</code></a>.</li>
 </ul>
 </div>
 <div class="section level2">
@@ -324,7 +330,7 @@
 
 <div class="pkgdown-footer-right">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
     </footer>

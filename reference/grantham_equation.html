@@ -25,7 +25,7 @@ Grantham distance, and therefore we include it explicitly in the equation
 above.
 If you want to calculate Grantham's distance right off from the identity of
 the amino acids, instead of using their chemical properties, then use
-grantham_distance()."><title>Grantham distance — grantham_equation • grantham</title><!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png"><link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png"><link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png"><link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png"><link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png"><link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png"><script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link href="../deps/bootstrap-5.1.0/bootstrap.min.css" rel="stylesheet"><script src="../deps/bootstrap-5.1.0/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous"><!-- bootstrap-toc --><script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Grantham distance — grantham_equation"><meta property="og:description" content="This function calculates Grantham's distance \(d_{i,j}\) between two
+grantham_distance()."><title>Grantham distance — grantham_equation • grantham</title><!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png"><link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png"><link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png"><link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png"><link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png"><link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png"><script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link href="../deps/bootstrap-5.1.3/bootstrap.min.css" rel="stylesheet"><script src="../deps/bootstrap-5.1.3/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous"><!-- bootstrap-toc --><script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Grantham distance — grantham_equation"><meta property="og:description" content="This function calculates Grantham's distance \(d_{i,j}\) between two
 amino acids (\(i\) and \(j\)) based on their chemical properties:
 $$d_{i,j} = \rho ((\alpha (c_i-c_j)^2 + \beta (p_i-p_j)^2 + \gamma (v_i-v_j)^2)^\frac{1}{2}$$
 This calculation is based on three amino acid side chain properties that were
@@ -126,43 +126,61 @@ the amino acids, instead of using their chemical properties, then use
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">grantham_equation</span><span class="op">(</span>
-  <span class="va">c_i</span>,
-  <span class="va">c_j</span>,
-  <span class="va">p_i</span>,
-  <span class="va">p_j</span>,
-  <span class="va">v_i</span>,
-  <span class="va">v_j</span>,
-  alpha <span class="op">=</span> <span class="fl">1.833</span>,
-  beta <span class="op">=</span> <span class="fl">0.1018</span>,
-  gamma <span class="op">=</span> <span class="fl">0.000399</span>,
-  rho <span class="op">=</span> <span class="fl">50.723</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">grantham_equation</span><span class="op">(</span></span>
+<span>  <span class="va">c_i</span>,</span>
+<span>  <span class="va">c_j</span>,</span>
+<span>  <span class="va">p_i</span>,</span>
+<span>  <span class="va">p_j</span>,</span>
+<span>  <span class="va">v_i</span>,</span>
+<span>  <span class="va">v_j</span>,</span>
+<span>  alpha <span class="op">=</span> <span class="fl">1.833</span>,</span>
+<span>  beta <span class="op">=</span> <span class="fl">0.1018</span>,</span>
+<span>  gamma <span class="op">=</span> <span class="fl">0.000399</span>,</span>
+<span>  rho <span class="op">=</span> <span class="fl">50.723</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
     <h2 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
     <dl><dt>c_i</dt>
 <dd><p>composition value for the <em>ith</em> amino acid.</p></dd>
+
+
 <dt>c_j</dt>
 <dd><p>composition value for the <em>jth</em> amino acid.</p></dd>
+
+
 <dt>p_i</dt>
 <dd><p>polarity value for the <em>ith</em> amino acid.</p></dd>
+
+
 <dt>p_j</dt>
 <dd><p>polarity value for the <em>jth</em> amino acid.</p></dd>
+
+
 <dt>v_i</dt>
 <dd><p>molecular volume value for the <em>ith</em> amino acid.</p></dd>
+
+
 <dt>v_j</dt>
 <dd><p>molecular volume value for the <em>jth</em> amino acid.</p></dd>
+
+
 <dt>alpha</dt>
 <dd><p>The constant \(\alpha\) in the equation of Grantham's
 paper, in page 863.</p></dd>
+
+
 <dt>beta</dt>
 <dd><p>The constant \(\beta\) in the equation of Grantham's
 paper, in page 863.</p></dd>
+
+
 <dt>gamma</dt>
 <dd><p>The constant \(\gamma\) in the equation of Grantham's
 paper, in page 863.</p></dd>
+
+
 <dt>rho</dt>
 <dd><p>Grantham's distances reported in Table 2, Science (1974).
 185(4154): 862--4 by R. Grantham, are scaled by a factor (here named
@@ -170,10 +188,13 @@ paper, in page 863.</p></dd>
 parameter allows this factor \(\rho\) to be changed. By default
 \(\rho=50.723\), the same value used by Grantham. This value is
 originally mentioned in the caption of Table 2 of the aforementioned paper.</p></dd>
+
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A double vector of Grantham's distances.</p>
+    
+
+<p>A double vector of Grantham's distances.</p>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
@@ -191,7 +212,7 @@ Science (1974). 185(4154): 862--4 by R. Grantham.</p></div>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
     </footer></div>
